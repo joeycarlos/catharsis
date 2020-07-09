@@ -81,7 +81,8 @@ public class Pickup : MonoBehaviour
             state = State.Attract;
         } else if (collision.gameObject.tag == "Player") {
             player.GetComponent<Player>().GainExperience(experienceValue);
-            // Spawn collect pickup effect
+            Destroy(gameObject);
+        } else if (collision.gameObject.tag == "BottomBoundary") {
             Destroy(gameObject);
         }
     }
