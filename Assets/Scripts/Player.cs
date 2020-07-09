@@ -54,7 +54,10 @@ public class Player : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             mousePos.z = 0;
             Vector3 offsetVector = mousePos - startHoldMousePosition;
-            this.transform.position = startHoldPlayerPosition + offsetVector;
+            Vector3 targetVector = startHoldPlayerPosition + offsetVector;
+            targetVector.x = Mathf.Clamp(targetVector.x, -5.0f, 5.0f);
+            targetVector.y = Mathf.Clamp(targetVector.y, -9.5f, 9.5f);
+            this.transform.position = targetVector;
 
         }
 
