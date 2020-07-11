@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     void Start() {
         currentHealth = maxHealth;
+        GameplayUI.Instance.SetMaxHealth(maxHealth);
         GameplayUI.Instance.UpdateHealthUI(currentHealth);
         timeSinceAttack = 0;
         attackTimeInterval = 1.0f / attacksPerSecond;

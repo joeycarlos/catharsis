@@ -9,8 +9,8 @@ public class GameplayUI : MonoBehaviour
     public static GameplayUI Instance { get; private set; }
 
     public Text healthValue;
-
     public Text experienceValue;
+    public Slider slider;
 
     private void Awake() {
         if (Instance == null) {
@@ -21,8 +21,14 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
+    public void SetMaxHealth(int value) {
+        slider.maxValue = value;
+        slider.value = value;
+    }
+
     public void UpdateHealthUI(int value) {
         healthValue.text = value.ToString();
+        slider.value = value;
     }
 
     public void UpdateExpUI(int value) {

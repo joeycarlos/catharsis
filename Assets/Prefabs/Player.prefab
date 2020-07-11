@@ -4972,7 +4972,7 @@ MonoBehaviour:
   pickupEffect: {fileID: 8914182305192219904, guid: 74ae5b8885d12b045b61d252f644e827,
     type: 3}
   dualAttackOffsetValue: 0.2
-  numProjectilesLevel: 3
+  numProjectilesLevel: 0
 --- !u!58 &8402374903699167383
 CircleCollider2D:
   m_ObjectHideFlags: 0
