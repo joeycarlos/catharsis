@@ -101,7 +101,7 @@ MonoBehaviour:
     type: 3}
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
   moveSpeed: 1
-  attacksPerSecond: 1
+  attacksPerSecond: 0.4
   projectile: {fileID: 9046601736077113451, guid: 228f70f78c5dadb4295f9b4ab41d4ff3,
     type: 3}
 --- !u!61 &2588180977357931375

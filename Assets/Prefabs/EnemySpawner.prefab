@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpawnAreaMagnitude: 5
-  minSpawnRate: 0.3
+  minSpawnRate: 1
   maxSpawnRate: 2
-  spawnObject: {fileID: 4349536565648957759, guid: 44d0baf3b9eec8847bb47fe54ccb99dd,
+  spawnObject: {fileID: 2588180977357931282, guid: 95af965df36ef35469ed591710e10e8c,
     type: 3}
