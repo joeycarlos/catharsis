@@ -11,14 +11,19 @@ public class Enemy : MonoBehaviour
 
     protected int currentHealth;
     protected int level;
+    protected EnemyUI enemyUI;
 
     public void Start() {
         level = 1;
         currentHealth = maxHealth;
+        enemyUI = GetComponentInChildren<EnemyUI>();
+        enemyUI.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage) {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+        enemyUI.UpdateHealthUI(currentHealth);
+
         if (currentHealth <= 0) {
             Instantiate(deathEffect, gameObject.GetComponent<Transform>().position, Quaternion.identity);
             Instantiate(pickup, gameObject.GetComponent<Transform>().position, Quaternion.identity);
