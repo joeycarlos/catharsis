@@ -11,12 +11,17 @@ public class Player : MonoBehaviour
     public GameObject catharsis;
     public GameObject pickupEffect;
 
+    public float dualAttackOffsetValue;
+
+    public int numProjectilesLevel;
+
     private int currentHealth;
     private Vector3 startHoldMousePosition;
     private Vector3 startHoldPlayerPosition;
 
     private float attackTimeInterval;
     private float timeSinceAttack;
+    private Vector3 dualAttackOffset;
 
     private int experienceValue;
 
@@ -25,6 +30,7 @@ public class Player : MonoBehaviour
         GameplayUI.Instance.UpdateHealthUI(currentHealth);
         timeSinceAttack = 0;
         attackTimeInterval = 1.0f / attacksPerSecond;
+        dualAttackOffset = new Vector3(dualAttackOffsetValue, 0, 0);
         experienceValue = 0;
     }
 
@@ -71,7 +77,53 @@ public class Player : MonoBehaviour
     }
 
     void Attack() {
-        Instantiate(projectile, gameObject.GetComponent<Transform>().position, Quaternion.identity);
+        switch (numProjectilesLevel) {
+            case 0:
+                SpawnProjectile(transform.position, Vector3.up, 10);
+                break;
+            case 1:
+                SpawnProjectile(transform.position - dualAttackOffset * 0.5f, Vector3.up, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 0.5f, Vector3.up, 10);
+                break;
+            case 2:
+                SpawnProjectile(transform.position, Vector3.up, 10);
+
+                SpawnProjectile(transform.position, Quaternion.AngleAxis(86, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position, Quaternion.AngleAxis(94, Vector3.forward) * Vector3.right, 10);
+                break;
+            case 3:
+                SpawnProjectile(transform.position - dualAttackOffset * 0.5f, Quaternion.AngleAxis(91, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 0.5f, Quaternion.AngleAxis(89, Vector3.forward) * Vector3.right, 10);
+
+                SpawnProjectile(transform.position - dualAttackOffset * 2, Quaternion.AngleAxis(92, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 2, Quaternion.AngleAxis(88, Vector3.forward) * Vector3.right, 10);
+                break;
+            case 4:
+                SpawnProjectile(transform.position, Vector3.up, 10);
+
+                SpawnProjectile(transform.position - dualAttackOffset, Quaternion.AngleAxis(91, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset, Quaternion.AngleAxis(89, Vector3.forward) * Vector3.right, 10);
+
+                SpawnProjectile(transform.position - dualAttackOffset * 2, Quaternion.AngleAxis(92, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 2, Quaternion.AngleAxis(88, Vector3.forward) * Vector3.right, 10);
+                break;
+            case 5:
+                SpawnProjectile(transform.position - dualAttackOffset * 0.5f, Vector3.up, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 0.5f, Vector3.up, 10);
+
+                SpawnProjectile(transform.position - dualAttackOffset * 2, Quaternion.AngleAxis(91, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 2, Quaternion.AngleAxis(89, Vector3.forward) * Vector3.right, 10);
+
+                SpawnProjectile(transform.position - dualAttackOffset * 3, Quaternion.AngleAxis(92, Vector3.forward) * Vector3.right, 10);
+                SpawnProjectile(transform.position + dualAttackOffset * 3, Quaternion.AngleAxis(88, Vector3.forward) * Vector3.right, 10);
+                break;
+        }
+        
+    }
+
+    void SpawnProjectile(Vector3 position, Vector3 direction, float speed) {
+        GameObject iProjectile = Instantiate(projectile, position, Quaternion.identity);
+        iProjectile.GetComponent<PlayerProjectile>().initProjectile(direction, speed);
     }
 
     public void TakeDamage(int damage) {
