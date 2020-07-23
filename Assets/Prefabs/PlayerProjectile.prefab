@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1080874414
 Transform:
   m_ObjectHideFlags: 0
@@ -4852,7 +4852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  attackDamage: 5
+  attackDamage: 10
   hitEffect: {fileID: 4174845500829030052, guid: 12add08c52b64fb4eb8c7338b5686a0f,
     type: 3}
 --- !u!61 &326207014935171272
