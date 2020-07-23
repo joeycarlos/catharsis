@@ -100,7 +100,9 @@ MonoBehaviour:
   deathEffect: {fileID: 4412482594996111445, guid: bff224b24c6afef46b4d2ddc89e3ca93,
     type: 3}
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
-  moveSpeed: 3
+  idleVerticalMoveSpeed: 1.5
+  idleHorizontalVibrateSpeed: 2
+  idleVibrateAmplitude: 1.5
 --- !u!61 &8541503943060397128
 BoxCollider2D:
   m_ObjectHideFlags: 0

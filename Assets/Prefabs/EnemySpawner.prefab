@@ -44,7 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpawnAreaMagnitude: 5
-  minSpawnRate: 1
-  maxSpawnRate: 2
-  spawnObject: {fileID: 2588180977357931282, guid: 95af965df36ef35469ed591710e10e8c,
+  minSpawnRate: 0.3
+  maxSpawnRate: 0.6
+  sadnessEnemy: {fileID: 2588180977357931282, guid: 95af965df36ef35469ed591710e10e8c,
+    type: 3}
+  angerEnemy: {fileID: 3663258726119971851, guid: bec9942893e44dd4d8ea9857d09c64d5,
+    type: 3}
+  envyEnemy: {fileID: 4894512092702784177, guid: a9b10a59d9e859041bce75a997a102fb,
+    type: 3}
+  fearEnemy: {fileID: 8830973982697771469, guid: 24a8a748f9ed8314b91fa66e26b9c8b8,
+    type: 3}
+  prideEnemy: {fileID: 8944309446107315580, guid: bffeebca9bad627469b2fc1eecd101a9,
     type: 3}

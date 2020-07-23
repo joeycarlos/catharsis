@@ -6,6 +6,7 @@ public class Sadness : Enemy
 {
     public float moveSpeed;
     public float attacksPerSecond;
+    public bool shootingMode;
 
     public GameObject projectile;
 
@@ -17,19 +18,26 @@ public class Sadness : Enemy
     {
         base.Start();
 
-        timeSinceAttack = 0;
-        attackTimeInterval = 1.0f / attacksPerSecond;
+        if (shootingMode) {
+            timeSinceAttack = 0;
+            attackTimeInterval = 1.0f / attacksPerSecond;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        timeSinceAttack += Time.deltaTime;
-        if (timeSinceAttack > attackTimeInterval) {
-            Attack();
-            timeSinceAttack = 0;
+
+        if (shootingMode) {
+            timeSinceAttack += Time.deltaTime;
+            if (timeSinceAttack > attackTimeInterval) {
+                Attack();
+                timeSinceAttack = 0;
+            }
         }
+
     }
 
     void Move() {
