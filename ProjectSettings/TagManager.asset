@@ -7,6 +7,7 @@ TagManager:
   - BottomBoundary
   - PlayerAura
   - Catharsis
+  - SideBoundary
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,6 @@ public class Fear : Enemy
 {
     public float moveSpeed;
     public float horizontalMoveSpeed;
-    public float screenAmplitude;
 
     private bool moveRight;
 
@@ -21,9 +20,6 @@ public class Fear : Enemy
     }
 
     void Move() {
-        if ( Mathf.Abs(transform.position.x) >= screenAmplitude) {
-            moveRight = !moveRight;
-        }
 
         float xMovement = horizontalMoveSpeed;
         if (!moveRight) {
@@ -32,5 +28,14 @@ public class Fear : Enemy
 
         Vector3 moveVector = new Vector3(xMovement, -moveSpeed, 0) * Time.deltaTime;
         this.transform.position += moveVector;
+    }
+
+    new private void OnTriggerEnter2D(Collider2D collision) {
+        base.OnTriggerEnter2D(collision);
+        
+        if (collision.gameObject.tag == "SideBoundary") {
+            moveRight = !moveRight;
+        }
+        
     }
 }

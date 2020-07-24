@@ -102,7 +102,6 @@ MonoBehaviour:
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
   moveSpeed: 1
   horizontalMoveSpeed: 4
-  screenAmplitude: 5
 --- !u!61 &1723792826857336871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &4750090970186849705
 Rigidbody2D:

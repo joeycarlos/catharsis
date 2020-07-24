@@ -102,7 +102,7 @@ MonoBehaviour:
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
   idleVerticalMoveSpeed: 1.5
   idleHorizontalVibrateSpeed: 2
-  idleVibrateAmplitude: 1.5
+  idleVibrateAmplitude: 1
 --- !u!61 &8541503943060397128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &3292095713987494300
 Rigidbody2D:

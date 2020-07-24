@@ -104,6 +104,7 @@ MonoBehaviour:
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
   moveSpeed: 1
   attacksPerSecond: 0.4
+  shootingMode: 0
   projectile: {fileID: 9046601736077113451, guid: 228f70f78c5dadb4295f9b4ab41d4ff3,
     type: 3}
 --- !u!61 &2588180977357931375
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &2588180977357931283
 Rigidbody2D:
