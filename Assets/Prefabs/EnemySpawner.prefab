@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bde5337d90fa14baa2a8783d69fa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpawnAreaMagnitude: 5
+  horizontalSpawnAreaMagnitude: 4
   minSpawnRate: 0.3
   maxSpawnRate: 0.6
   sadnessEnemy: {fileID: 2588180977357931282, guid: 95af965df36ef35469ed591710e10e8c,
