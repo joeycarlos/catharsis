@@ -40,10 +40,12 @@ public class Pickup : MonoBehaviour
                 if (elapsedTime < spawnTime) {
                     elapsedTime += Time.deltaTime;
                 } else {
+                    elapsedTime = 0;
                     state = State.Idle;
                 }
                 break;
             case State.Idle:
+                elapsedTime += Time.deltaTime;
                 IdleFloat();
             break;
 
@@ -61,7 +63,7 @@ public class Pickup : MonoBehaviour
 
     private void IdleFloat() {
         Vector3 moveVector = this.transform.position;
-        float newX = Mathf.Sin(Time.time * idleHorizontalVibrateSpeed) * idleVibrateAmplitude + originalXPosition;
+        float newX = Mathf.Sin(elapsedTime * idleHorizontalVibrateSpeed) * idleVibrateAmplitude + originalXPosition;
 
         transform.position = new Vector3(newX, this.transform.position.y - (idleVerticalMoveSpeed * Time.deltaTime) , this.transform.position.z);
     }

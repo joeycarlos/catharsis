@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 14273cf75de361a40b50027ffe032218, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 56f250179f8bb2341bb6fc7fadf1ce95, type: 3}
+  m_Color: {r: 0.7028302, g: 0.77857935, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   deathEffect: {fileID: 4412482594996111445, guid: bff224b24c6afef46b4d2ddc89e3ca93,
     type: 3}
   pickup: {fileID: 1486673905965930932, guid: 18ede7780a40a2947b7c6d5e599e4b5d, type: 3}
-  moveSpeed: 3
+  moveSpeed: 1
   attacksPerSecond: 0.4
   shootingMode: 0
   projectile: {fileID: 9046601736077113451, guid: 228f70f78c5dadb4295f9b4ab41d4ff3,
@@ -123,14 +123,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6944444, y: 0.6944444}
+    oldSize: {x: 1, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 0.8, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &2588180977357931283
 Rigidbody2D:
