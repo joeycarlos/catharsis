@@ -7,16 +7,47 @@ public class Fear : Enemy
     public float moveSpeed;
     public float horizontalMoveSpeed;
 
+    public float pauseTime;
+    private float timeSincePause;
+
+    public float timeToSwitchDirection;
+    private float timeSinceSwitchDirection;
+
     private bool moveRight;
+    private State state;
 
     new void Start() {
         base.Start();
+        timeSinceSwitchDirection = 0;
+        timeSincePause = 0;
 
         moveRight = true;
+        state = State.Move;
     }
 
     void Update() {
-        Move();
+
+        if (state == State.Move) {
+
+            timeSinceSwitchDirection += Time.deltaTime;
+            if (timeSinceSwitchDirection >= timeToSwitchDirection) {
+                moveRight = !moveRight;
+                timeSinceSwitchDirection = 0;
+                state = State.Stop;
+            }
+
+            Move();
+
+        } else {
+
+            timeSincePause += Time.deltaTime;
+
+            if (timeSincePause > pauseTime) {
+                timeSincePause = 0;
+                state = State.Move;
+            }
+        }
+
     }
 
     void Move() {
@@ -30,12 +61,8 @@ public class Fear : Enemy
         this.transform.position += moveVector;
     }
 
-    new private void OnTriggerEnter2D(Collider2D collision) {
-        base.OnTriggerEnter2D(collision);
-        
-        if (collision.gameObject.tag == "SideBoundary") {
-            moveRight = !moveRight;
-        }
-        
+    enum State {
+        Move,
+        Stop
     }
 }

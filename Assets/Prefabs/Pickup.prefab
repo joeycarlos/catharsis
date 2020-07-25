@@ -214,11 +214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74f096a5348f444ab528136e822f38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleVerticalMoveSpeed: 0.25
-  idleHorizontalVibrateSpeed: 5
-  idleVibrateAmplitude: 0.005
+  idleVerticalMoveSpeed: 0
+  idleHorizontalVibrateSpeed: 7
+  idleVibrateAmplitude: 0.03
   attractMoveSpeed: 1
-  attractAccelerationFactor: 1.2
+  attractAccelerationFactor: 1.1
   attractSpeedIncreaseTime: 0.1
   spawnTime: 0.4
   experienceValue: 10
